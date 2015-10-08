@@ -128,7 +128,7 @@
         }
         function onMouseClick(event) {
             var u = Snap(dragTarget);
-            if (!event.ctrlKey) return;
+            if (!(event.ctrlKey || event.shiftKey)) return;
             var rotate = u.transform().globalMatrix.split().rotate+90;
             transformItem(u, rotate);
         }
